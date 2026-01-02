@@ -6,76 +6,64 @@
 <title>Task 1 – Website & SEO Basics</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <style>
-@keyframes fadeIn {0%{opacity:0}100%{opacity:1}}
-@keyframes blobPulse {0%,100%{transform:scale(1)}50%{transform:scale(1.2)}}
-.animate-fadeIn{animation:fadeIn 1s ease forwards}
-.animate-pulse-slow{animation:blobPulse 6s ease-in-out infinite}
+/* Animations */
+@keyframes fadeIn {0%{opacity:0; transform: translateY(20px);} 100%{opacity:1; transform: translateY(0);}}
+.animate-fadeIn {animation: fadeIn 0.8s ease forwards; opacity: 0;}
+.delay-100 { animation-delay: 0.1s; } .delay-200 { animation-delay: 0.2s; } .delay-300 { animation-delay: 0.3s; }
+.delay-400 { animation-delay: 0.4s; } .delay-500 { animation-delay: 0.5s; } .delay-600 { animation-delay: 0.6s; }
+.delay-700 { animation-delay: 0.7s; } .delay-800 { animation-delay: 0.8s; } .delay-900 { animation-delay: 0.9s; } .delay-1000 { animation-delay: 1s; }
 
-.card{transition:transform .4s, box-shadow .4s}
-.card:hover{transform:translateY(-8px); box-shadow:0 0 40px rgba(236,72,153,.4),0 0 20px rgba(79,70,229,.4)}
+/* Card hover */
+.card {transition: transform 0.4s, box-shadow 0.4s;}
+.card:hover {transform: translateY(-8px); box-shadow:0 0 40px rgba(236,72,153,.4),0 0 20px rgba(79,70,229,.4);}
+
+/* Progress Ring */
+.progress-ring {width: 110px; height: 110px; border-radius: 50%; display: grid; place-items: center; font-weight: 700; transition: all 0.5s ease;}
+.text-pinkblue-400 { color: #c084fc; }
 
 /* Lightbox */
-.lightbox {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,.85);
-  display: none;
-  align-items: center;
-  justify-content: center;
-  z-index: 50;
-}
-.text-pinkblue-400 {
-  color: #c084fc; /* perfect pink + blue mix */
-}
-.lightbox img {
-  max-width: 90%;
-  max-height: 90%;
-  border-radius: 14px;
-  box-shadow: 0 0 40px rgba(99,102,241,.6);
-}
-.progress-ring {
-  width: 110px;
-  height: 110px;
-  border-radius: 50%;
-  display: grid;
-  place-items: center;
-  font-weight: 700;
-}
+.lightbox {position: fixed; inset: 0; background: rgba(0,0,0,.85); display: none; align-items: center; justify-content: center; z-index: 50;}
+.lightbox img {max-width: 90%; max-height: 90%; border-radius: 14px; box-shadow: 0 0 40px rgba(99,102,241,.6);}
 
+/* Spinning circle */
+@keyframes spin-slow {from {transform: rotate(0deg);} to {transform: rotate(360deg);}}
+.animate-spin-slow {animation: spin-slow 30s linear infinite;}
 </style>
 </head>
 <body class="bg-gray-950 text-white font-sans overflow-x-hidden">
 
 <section class="relative px-6 py-20 max-w-6xl mx-auto">
-  <!-- Background Blobs -->
-  <div class="absolute -top-40  w-96 h-96 bg-indigo-600/20 rounded-full blur-3xl animate-pulse-slow"></div>
-  <div class="absolute -bottom-40  w-96 h-96 bg-pink-500/20 rounded-full blur-3xl animate-pulse-slow"></div>
 
+  <!-- Background Blobs -->
+  <div class="absolute -top-40 w-96 h-96 bg-indigo-600/20 rounded-full blur-3xl animate-pulse-slow"></div>
+  <div class="absolute -bottom-40 w-96 h-96 bg-pink-500/20 rounded-full blur-3xl animate-pulse-slow"></div>
+
+  <!-- HEADER -->
   <h1 class="text-4xl md:text-6xl font-extrabold text-center mb-6
   bg-gradient-to-r from-white via-indigo-300 to-pink-400
-  bg-clip-text text-transparent animate-fadeIn">
+  bg-clip-text text-transparent animate-fadeIn delay-100">
    Website & SEO Basics
   </h1>
 
-  <p class="text-center text-gray-400 mb-16 animate-fadeIn">
+  <p class="text-center text-gray-400 mb-16 animate-fadeIn delay-200">
     Tools Used: Google Search, Ubersuggest, Google PageSpeed Insights
   </p>
 
   <!-- ACTIVITY 1 -->
-  <div class="space-y-8 mb-16">
+  <div class="space-y-8 mb-16 animate-fadeIn delay-300">
     <h2 class="text-3xl font-bold text-pinkblue-400">Top websites Online</h2>
-    <div class="grid md:grid-cols-3 gap-8">
-      <div class="bg-gray-900 rounded-2xl p-6 card">
-        <h3 class="font-semibold text-lg mb-2  text-pink-400">Baglush</h3>
+    <div class="grid md:grid-cols-3 gap-8 mt-4">
+      <div class="bg-gray-900 rounded-2xl p-6 card animate-fadeIn delay-400">
+        <h3 class="font-semibold text-lg mb-2 text-pink-400">Baglush</h3>
         <p class="text-gray-400 text-sm mb-3">Popular bags store with stylish & modern items.</p>
         <a href="./Images//baglush.png" onclick="openImg('img1')" class="text-indigo-400 underline text-sm">Click here</a>
       </div>
-      <div class="bg-gray-900 rounded-2xl p-6 card">
+      <div class="bg-gray-900 rounded-2xl p-6 card animate-fadeIn delay-500">
         <h3 class="font-semibold text-lg mb-2 text-pink-400">Style by rk</h3>
         <p class="text-gray-400 text-sm mb-3">Website providing daily outfits.</p>
         <a href="./Images//style.rk.png" onclick="openImg('img2')" class="text-indigo-400 underline text-sm">Click here</a>
       </div>
-      <div class="bg-gray-900 rounded-2xl p-6 card">
+      <div class="bg-gray-900 rounded-2xl p-6 card animate-fadeIn delay-600">
         <h3 class="font-semibold text-lg mb-2 text-pink-400">Outfikra</h3>
         <p class="text-gray-400 text-sm mb-3">Collection of shoes.</p>
         <a href="./Images//fikra.png" onclick="openImg('img3')" class="text-indigo-400 underline text-sm">Click here</a>
@@ -83,89 +71,52 @@
     </div>
   </div>
 
-  <section class="relative bg-gray-900 py-20 px-6 rounded-3xl overflow-hidden flex justify-center items-center">
-
   <!-- CIRCLE IMAGE COLLAGE -->
-  <div class="relative w-[400px] h-[400px]">
+  <section class="relative bg-gray-900 py-20 px-6 rounded-3xl overflow-hidden flex justify-center items-center animate-fadeIn delay-700">
+    <div class="relative w-[400px] h-[400px]">
+      <div class="absolute w-full h-full rounded-full border-4 border-pink-500/30 animate-spin-slow"></div>
+      <img src="./Images/baglush.png" alt="Center Image" class="absolute top-1/2 left-1/2 w-[180px] h-[240px] object-cover rounded-3xl shadow-2xl -translate-x-1/2 -translate-y-1/2 z-10">
+      <img src="./Images/fikra.png" alt="Top Image" class="absolute -top-8 left-1/4 w-[120px] h-[160px] object-cover rounded-2xl shadow-xl">
+      <img src="./Images/style.rk.png" alt="Bottom Image" class="absolute -bottom-8 right-1/4 w-[120px] h-[160px] object-cover rounded-2xl shadow-xl">
+    </div>
+  </section>
 
-    <!-- ROTATING CIRCLE -->
-    <div class="absolute w-full h-full rounded-full border-4 border-pink-500/30 animate-spin-slow"></div>
-
-    <!-- CENTER IMAGE -->
-    <img
-      src="./Images/baglush.png"
-      alt="Center Image"
-      class="absolute top-1/2 left-1/2 w-[180px] h-[240px] object-cover rounded-3xl shadow-2xl -translate-x-1/2 -translate-y-1/2 z-10"
-    >
-
-    <!-- TOP IMAGE -->
-    <img
-      src="./Images/fikra.png"
-      alt="Top Image"
-      class="absolute -top-8 left-1/4 w-[120px] h-[160px] object-cover rounded-2xl shadow-xl"
-    >
-
-    <!-- BOTTOM IMAGE -->
-    <img
-      src="./Images/style.rk.png"
-      alt="Bottom Image"
-      class="absolute -bottom-8 right-1/4 w-[120px] h-[160px] object-cover rounded-2xl shadow-xl"
-    >
-
-  </div>
-
-</section>
-
-<style>
-@keyframes spin-slow {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
-.animate-spin-slow {
-  animation: spin-slow 30s linear infinite;
-}
-</style>
- 
-  <!-- ACTIVITY 2: Keywords Table -->
-  <div class="mb-20">
-    <h2 class="text-3xl font-bold text-pinkblue-400 mb-7 mt-8 ">
-      Keyword Research (Ubersuggest)
-    </h2>
-
+  <!-- ACTIVITY 2: Keyword Table -->
+  <div class="mb-20 animate-fadeIn delay-800">
+    <h2 class="text-3xl font-bold text-pinkblue-400 mb-7 mt-8">Keyword Research (Ubersuggest)</h2>
     <div class="grid grid-cols-4 text-gray-400 font-semibold text-lg mb-4">
       <div class="text-pink-400">Keyword</div>
-      <div  class="text-pink-400">Search Volume</div>
-      <div  class="text-pink-400">Keyword Difficulty</div>
-      <div  class="text-pink-400">Screenshot</div>
+      <div class="text-pink-400">Search Volume</div>
+      <div class="text-pink-400">Keyword Difficulty</div>
+      <div class="text-pink-400">Screenshot</div>
     </div>
 
     <div class="space-y-3">
-      <div class="grid grid-cols-4 gap-4 bg-gray-900 rounded-2xl p-4 items-center hover:bg-gray-800 transition-all">
+      <div class="grid grid-cols-4 gap-4 bg-gray-900 rounded-2xl p-4 items-center hover:bg-gray-800 transition-all animate-fadeIn delay-900">
         <div>Jumpsuits</div>
         <div>200.4k</div>
         <div>Medium</div>
         <div><a href="./Images/jump.png" onclick="openImg('img4')" class="text-indigo-400 underline cursor-pointer">Click here</a></div>
       </div>
-      <div class="grid grid-cols-4 gap-4 bg-gray-900 rounded-2xl p-4 items-center hover:bg-gray-800 transition-all">
+      <div class="grid grid-cols-4 gap-4 bg-gray-900 rounded-2xl p-4 items-center hover:bg-gray-800 transition-all animate-fadeIn delay-1000">
         <div>Velvet Dress</div>
         <div>57.5k</div>
         <div>Medium</div>
         <div><a href="./Images/velvet.png" onclick="openImg('img5')" class="text-indigo-400 underline cursor-pointer">Click here</a></div>
       </div>
-      <div class="grid grid-cols-4 gap-4 bg-gray-900 rounded-2xl p-4 items-center hover:bg-gray-800 transition-all">
+      <div class="grid grid-cols-4 gap-4 bg-gray-900 rounded-2xl p-4 items-center hover:bg-gray-800 transition-all animate-fadeIn delay-1100">
         <div>Gift for Men</div>
         <div>233.7k</div>
         <div>High</div>
         <div><a href="./Images//men.png" onclick="openImg('img6')" class="text-indigo-400 underline cursor-pointer">Click here</a></div>
       </div>
-      <div class="grid grid-cols-4 gap-4 bg-gray-900 rounded-2xl p-4 items-center hover:bg-gray-800 transition-all">
+      <div class="grid grid-cols-4 gap-4 bg-gray-900 rounded-2xl p-4 items-center hover:bg-gray-800 transition-all animate-fadeIn delay-1200">
         <div>Fashion Bags</div>
         <div>59.2k</div>
         <div>Medium</div>
         <div><a href="./Images/bags.png" onclick="openImg('img7')" class="text-indigo-400 underline cursor-pointer">Click here</a></div>
       </div>
-      <div class="grid grid-cols-4 gap-4 bg-gray-900 rounded-2xl p-4 items-center hover:bg-gray-800 transition-all">
+      <div class="grid grid-cols-4 gap-4 bg-gray-900 rounded-2xl p-4 items-center hover:bg-gray-800 transition-all animate-fadeIn delay-1300">
         <div>Overalls</div>
         <div>311.9k</div>
         <div>Medium</div>
@@ -174,165 +125,86 @@
     </div>
   </div>
 
-  <!-- ACTIVITY 3 -->
- <div class="mb-16">
-  <h2 class="text-2xl font-bold text-indigo-300 mb-8">
-    Website Speed Analysis For Instagram
-  </h2>
-
-  <div class="bg-gray-900 rounded-3xl p-8 flex flex-col md:flex-row justify-around gap-10">
-
-    <!-- MOBILE -->
-    <div class="text-center">
-      <p class="text-sm text-gray-400 mb-4">Desktop Score</p>
-
-      <div class="progress-ring mx-auto mb-4
-        bg-[conic-gradient(#ec4899_0%_41%,#1f2937_41%_100%)]">
-        <span class="text-2xl text-pink-400">41%</span>
+  <!-- ACTIVITY 3: Website Speed -->
+  <div class="mb-16 animate-fadeIn delay-1400">
+    <h2 class="text-2xl font-bold text-indigo-300 mb-8">Website Speed Analysis For Instagram</h2>
+    <div class="bg-gray-900 rounded-3xl p-8 flex flex-col md:flex-row justify-around gap-10">
+      <div class="text-center animate-fadeIn delay-1500">
+        <p class="text-sm text-gray-400 mb-4">Desktop Score</p>
+        <div class="progress-ring mx-auto mb-4 bg-[conic-gradient(#ec4899_0%_41%,#1f2937_41%_100%)] rounded-full w-28 h-28 flex items-center justify-center">
+          <span class="text-2xl text-pink-400 font-semibold">41%</span>
+        </div>
+        <a href="./Images/desktop.png" class="text-pink-400 text-sm underline hover:text-pink-300 transition">Click here for details</a>
       </div>
-
-      <a href="./Images/desktop.png"
-         class="text-pink-400 text-sm underline hover:text-pink-300 transition">
-        Click here for details
-      </a>
-    </div>
-
-    <!-- DESKTOP -->
-    <div class="text-center">
-      <p class="text-sm text-gray-400 mb-4">Mobile Score</p>
-
-      <div class="progress-ring mx-auto mb-4
-        bg-[conic-gradient(#6366f1_0%_58%,#1f2937_58%_100%)]">
-        <span class="text-2xl text-indigo-400">58%</span>
+      <div class="text-center animate-fadeIn delay-1600">
+        <p class="text-sm text-gray-400 mb-4">Mobile Score</p>
+        <div class="progress-ring mx-auto mb-4 bg-[conic-gradient(#6366f1_0%_58%,#1f2937_58%_100%)] rounded-full w-28 h-28 flex items-center justify-center">
+          <span class="text-2xl text-indigo-400 font-semibold">58%</span>
+        </div>
+        <a href="./Images/page.png" class="text-indigo-400 text-sm underline hover:text-indigo-300 transition">Click here for details</a>
       </div>
-
-      <a href="./Images/page.png"
-         class="text-indigo-400 text-sm underline hover:text-indigo-300 transition">
-        Click here for details
-      </a>
     </div>
-
-  </div>
-</div>
-
-<div class="mb-16">
-  <h2 class="text-2xl font-bold text-sky-300 mb-8">
-    Website Speed Analysis For Facebook
-  </h2>
-
-  <div class="bg-gray-900 rounded-3xl p-8 flex flex-col md:flex-row justify-around gap-10">
-
-    <!-- DESKTOP -->
-  <div class="text-center">
-  <p class="text-sm text-gray-400 mb-4">Desktop Score</p>
-
-  <div class="progress-ring mx-auto mb-4
-    bg-[conic-gradient(#22c55e_0%_55%,#1f2937_55%_100%)] rounded-full w-28 h-28 flex items-center justify-center">
-    <span class="text-2xl text-green-400 font-semibold">55%</span>
   </div>
 
-  <a href="./Images/dek.png"
-     class="text-green-400 text-sm underline hover:text-green-300 transition">
-    Click here for details
-  </a>
-</div>
-
-
-    <!-- MOBILE -->
-    <div class="text-center">
-      <p class="text-sm text-gray-400 mb-4">Mobile Score</p>
-
-      <div class="progress-ring mx-auto mb-4
-        bg-[conic-gradient(#38bdf8_0%_81%,#1f2937_81%_100%)]">
-        <span class="text-2xl text-white-400">81%</span>
+  <!-- Facebook -->
+  <div class="mb-16 animate-fadeIn delay-1700">
+    <h2 class="text-2xl font-bold text-sky-300 mb-8">Website Speed Analysis For Facebook</h2>
+    <div class="bg-gray-900 rounded-3xl p-8 flex flex-col md:flex-row justify-around gap-10">
+      <div class="text-center animate-fadeIn delay-1800">
+        <p class="text-sm text-gray-400 mb-4">Desktop Score</p>
+        <div class="progress-ring mx-auto mb-4 bg-[conic-gradient(#22c55e_0%_55%,#1f2937_55%_100%)] rounded-full w-28 h-28 flex items-center justify-center">
+          <span class="text-2xl text-green-400 font-semibold">55%</span>
+        </div>
+        <a href="./Images/dek.png" class="text-green-400 text-sm underline hover:text-green-300 transition">Click here for details</a>
       </div>
-
-      <a href="./Images/mobi.png"
-         class="text-sky-400 text-sm underline hover:text-sky-300 transition">
-        Click here for details
-      </a>
+      <div class="text-center animate-fadeIn delay-1900">
+        <p class="text-sm text-gray-400 mb-4">Mobile Score</p>
+        <div class="progress-ring mx-auto mb-4 bg-[conic-gradient(#38bdf8_0%_81%,#1f2937_81%_100%)] rounded-full w-28 h-28 flex items-center justify-center">
+          <span class="text-2xl text-gray-200 font-semibold">81%</span>
+        </div>
+        <a href="./Images/mobi.png" class="text-sky-400 text-sm underline hover:text-sky-300 transition">Click here for details</a>
+      </div>
     </div>
-
-  </div>
-</div>
-
-  <!-- ANALYSIS -->
-  <div class="bg-gray-900 rounded-2xl p-6 card">
-    <h2 class="text-2xl font-bold text-indigo-400 mb-4 ">Short Analysis</h2>
-    <p class="text-gray-300">
-      SEO, keyword research & website speed are crucial. Mobile performance improvement is essential.
-    </p>
   </div>
 
-  <!-- NAVIGATION -->
- <div class="flex justify-center gap-6 mt-16 flex-wrap">
+  <!-- Short Analysis -->
+  <div class="bg-gray-900 rounded-2xl p-6 card animate-fadeIn delay-2000">
+    <h2 class="text-2xl font-bold text-indigo-400 mb-4">Short Analysis</h2>
+    <p class="text-gray-300">SEO, keyword research & website speed are crucial. Mobile performance improvement is essential.</p>
+  </div>
 
-  <!-- BACK BUTTON -->
-  <a href="business-detail.html"
-     class="group relative overflow-hidden px-8 py-3 rounded-full
-     bg-gradient-to-r from-cyan-500 to-blue-600
-     text-sm md:text-base font-semibold tracking-wide
-     transition-all duration-500 ease-out
-     hover:-translate-x-2 hover:shadow-[0_0_25px_rgba(34,211,238,.5)]">
+  <!-- NAVIGATION BUTTONS -->
+  <div class="flex justify-center gap-6 mt-16 flex-wrap animate-fadeIn delay-2100">
+    <a href="business-detail.html"
+       class="group relative overflow-hidden px-8 py-3 rounded-full
+       bg-gradient-to-r from-cyan-500 to-blue-600
+       text-sm md:text-base font-semibold tracking-wide
+       transition-all duration-500 ease-out
+       hover:-translate-x-2 hover:shadow-[0_0_25px_rgba(34,211,238,.5)]">
+      <span class="relative z-10 transition-transform duration-500 group-hover:-translate-x-2">← Back</span>
+    </a>
 
-    <span class="relative z-10 transition-transform duration-500 group-hover:-translate-x-2">
-      ← Back
-    </span>
-
-    <span class="absolute inset-0 bg-gradient-to-r from-blue-600 to-cyan-500
-      translate-x-full group-hover:translate-x-0 transition-transform duration-500">
-    </span>
-  </a>
-
-  <!-- CONTINUE BUTTON -->
-  <a href="task2.html"
-     class="group relative overflow-hidden px-8 py-3 rounded-full
-     bg-gradient-to-r from-fuchsia-500 to-purple-600
-     text-sm md:text-base font-semibold tracking-wide
-     transition-all duration-500 ease-out
-     hover:translate-x-2 hover:shadow-[0_0_25px_rgba(217,70,239,.5)]">
-
-    <span class="relative z-10 transition-transform duration-500 group-hover:translate-x-2">
-      Continue →
-    </span>
-
-    <span class="absolute inset-0 bg-gradient-to-r from-purple-600 to-fuchsia-500
-      -translate-x-full group-hover:translate-x-0 transition-transform duration-500">
-    </span>
-  </a>
-
-</div>
+    <a href="task2.html"
+       class="group relative overflow-hidden px-8 py-3 rounded-full
+       bg-gradient-to-r from-fuchsia-500 to-purple-600
+       text-sm md:text-base font-semibold tracking-wide
+       transition-all duration-500 ease-out
+       hover:translate-x-2 hover:shadow-[0_0_25px_rgba(217,70,239,.5)]">
+      <span class="relative z-10 transition-transform duration-500 group-hover:translate-x-2">Continue →</span>
+    </a>
+  </div>
 
 </section>
 
-<!-- LIGHTBOX IMAGES -->
-<div id="img1" class="lightbox" onclick="closeImg('img1')">
-  <img src="https://via.placeholder.com/800x500?text=Imtiaz+Super+Market">
-</div>
-<div id="img2" class="lightbox" onclick="closeImg('img2')">
-  <img src="https://via.placeholder.com/800x500?text=Al-Habib+Store">
-</div>
-<div id="img3" class="lightbox" onclick="closeImg('img3')">
-  <img src="https://via.placeholder.com/800x500?text=Ghotki+Bazaar">
-</div>
-<div id="img4" class="lightbox" onclick="closeImg('img4')">
-  <img src="https://via.placeholder.com/800x500?text=Jumpsuits+Keyword">
-</div>
-<div id="img5" class="lightbox" onclick="closeImg('img5')">
-  <img src="https://via.placeholder.com/800x500?text=Velvet+Dress+Keyword">
-</div>
-<div id="img6" class="lightbox" onclick="closeImg('img6')">
-  <img src="https://via.placeholder.com/800x500?text=Gift+for+Men+Keyword">
-</div>
-<div id="img7" class="lightbox" onclick="closeImg('img7')">
-  <img src="https://via.placeholder.com/800x500?text=Fashion+Bags+Keyword">
-</div>
-<div id="img8" class="lightbox" onclick="closeImg('img8')">
-  <img src="https://via.placeholder.com/800x500?text=Overalls+Keyword">
-</div>
-<div id="img9" class="lightbox" onclick="closeImg('img9')">
- <img src="../Images/jump.png">
-</div>
+<!-- Lightbox Images -->
+<div id="img1" class="lightbox" onclick="closeImg('img1')"><img src="./Images/baglush.png"></div>
+<div id="img2" class="lightbox" onclick="closeImg('img2')"><img src="./Images/style.rk.png"></div>
+<div id="img3" class="lightbox" onclick="closeImg('img3')"><img src="./Images/fikra.png"></div>
+<div id="img4" class="lightbox" onclick="closeImg('img4')"><img src="./Images/jump.png"></div>
+<div id="img5" class="lightbox" onclick="closeImg('img5')"><img src="./Images/velvet.png"></div>
+<div id="img6" class="lightbox" onclick="closeImg('img6')"><img src="./Images/men.png"></div>
+<div id="img7" class="lightbox" onclick="closeImg('img7')"><img src="./Images/bags.png"></div>
+<div id="img8" class="lightbox" onclick="closeImg('img8')"><img src="./Images/Screenshot2026-01-01.png"></div>
 
 <script>
 function openImg(id){ document.getElementById(id).style.display='flex'; }

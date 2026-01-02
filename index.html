@@ -7,39 +7,53 @@
 <script src="https://cdn.tailwindcss.com"></script>
 
 <style>
-@keyframes slideLeft {0%{transform:translateX(-200px);opacity:0}100%{transform:translateX(0);opacity:1}}
-@keyframes slideRight {0%{transform:translateX(200px);opacity:0}100%{transform:translateX(0);opacity:1}}
+/* KEYFRAMES */
+@keyframes slideUpFade {0%{opacity:0; transform:translateY(30px);}100%{opacity:1; transform:translateY(0);}}
 @keyframes blobPulse {0%,100%{transform:scale(1)}50%{transform:scale(1.2)}}
+@keyframes blobFloat {0%{transform:translateY(0) translateX(0);}50%{transform:translateY(-15px) translateX(10px);}100%{transform:translateY(0) translateX(0);}}
 
-.animate-slideLeft{animation:slideLeft 1s ease forwards}
-.animate-slideRight{animation:slideRight 1s ease forwards}
-.animate-pulse-slow{animation:blobPulse 6s ease-in-out infinite}
+/* ANIMATION CLASSES */
+.animate-slideUpFade {animation:slideUpFade 0.8s ease forwards;}
+.animate-pulse-slow {animation:blobPulse 6s ease-in-out infinite;}
+.animate-float-slow {animation:blobFloat 15s ease-in-out infinite;}
+
+/* BLUR + FLOATING BLOBS */
+.blob {
+  border-radius:50%;
+  filter:blur(90px);
+}
+
+/* CARD, BUTTON, LINK HOVER */
+a, span, h1, .space-y-3 {
+  transition: all 0.4s ease;
+}
+a:hover {transform:translateY(-2px) scale(1.02);}
 </style>
 </head>
 
 <body class="bg-gray-950 text-white font-sans overflow-x-hidden">
 
 <section class="relative flex items-center justify-center min-h-screen px-6">
-  <!-- Blobs -->
-  <div class="absolute -top-40 w-96 h-96 bg-indigo-600/30 rounded-full blur-3xl animate-pulse-slow"></div>
-  <div class="absolute bottom-0 w-96 h-96 bg-pink-500/20 rounded-full blur-3xl animate-pulse-slow"></div>
+  <!-- Floating Blobs -->
+  <div class="absolute -top-40 w-96 h-96 bg-indigo-600/30 blob animate-pulse-slow animate-float-slow"></div>
+  <div class="absolute bottom-0 w-96 h-96 bg-pink-500/20 blob animate-pulse-slow animate-float-slow"></div>
 
   <div class="relative max-w-4xl w-full text-center">
     <span class="inline-block mb-6 px-5 py-2 text-sm rounded-full 
-      bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 animate-slideLeft">
+      bg-indigo-500/10 text-indigo-400 border border-indigo-500/20">
       Digital Marketing Practical Assignment
     </span>
 
     <h1 class="text-4xl md:text-6xl xl:text-7xl font-extrabold mb-6
       bg-gradient-to-r from-white via-indigo-300 to-pink-400
-      bg-clip-text text-transparent animate-slideRight">
+      bg-clip-text text-transparent">
       Digital Marketing
       <span class="block mt-2 text-2xl font-semibold text-gray-200">
         Hands-on Assignment
       </span>
     </h1>
 
-    <div class="text-gray-300 text-lg max-w-2xl mx-auto mb-10 space-y-3 animate-slideLeft">
+    <div class="text-gray-300 text-lg max-w-2xl mx-auto mb-10 space-y-3">
       <p><b>Course:</b> Digital Marketing</p>
       <p><b>Submitted By:</b> Hadia Khalil</p>
       <div class="h-1 w-24 mx-auto bg-gradient-to-r from-indigo-500 to-pink-500 rounded-full"></div>
@@ -56,6 +70,22 @@
     </a>
   </div>
 </section>
+
+<script>
+// STAGGERED SMOOTH ANIMATION
+window.addEventListener('DOMContentLoaded', () => {
+  const items = document.querySelectorAll('span, h1, h1 span, .space-y-3, a');
+  items.forEach((el, i) => {
+    el.style.opacity = 0;
+    el.style.transform = 'translateY(30px)';
+    setTimeout(() => {
+      el.style.transition = 'all 0.8s ease';
+      el.style.opacity = 1;
+      el.style.transform = 'translateY(0)';
+    }, i * 300); // smoother delay 300ms
+  });
+});
+</script>
 
 </body>
 </html>

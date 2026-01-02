@@ -6,6 +6,18 @@
 <title>Task 2 – Social Media Marketing</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <style>
+/* Scroll fade-up animation */
+.scroll-fade {
+  opacity: 0;
+  transform: translateY(25px);
+  transition: all 0.8s ease-out;
+}
+.scroll-fade.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Existing animations */
 @keyframes fadeIn {0%{opacity:0}100%{opacity:1}}
 @keyframes blobPulse {0%,100%{transform:scale(1)}50%{transform:scale(1.2)}}
 .animate-fadeIn{animation:fadeIn 1s ease forwards}
@@ -30,282 +42,210 @@
   border-radius: 14px;
   box-shadow: 0 0 40px rgba(99,102,241,.6);
 }
-@keyframes rotateSlow {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-.rotate-slow {
-  animation: rotateSlow 18s linear infinite;
-}
-@keyframes spin-slow {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
 
-.animate-spin-slow {
-  animation: spin-slow 20s linear infinite;
-}
+/* Rotations */
+@keyframes rotateSlow { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+.rotate-slow { animation: rotateSlow 18s linear infinite; }
+
+@keyframes spin-slow { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+.animate-spin-slow { animation: spin-slow 20s linear infinite; }
 </style>
 </head>
 <body class="bg-gray-950 text-white font-sans overflow-x-hidden">
 
 <section class="relative px-6 py-20 max-w-6xl mx-auto">
-  <!-- Background Blobs -->
-  <div class="absolute -top-40  w-96 h-96 bg-indigo-600/20 rounded-full blur-3xl animate-pulse-slow"></div>
-  <div class="absolute -bottom-40  w-96 h-96 bg-pink-500/20 rounded-full blur-3xl animate-pulse-slow"></div>
 
+  <!-- Background Blobs -->
+  <div class="absolute -top-40 w-96 h-96 bg-indigo-600/20 rounded-full blur-3xl animate-pulse-slow"></div>
+  <div class="absolute -bottom-40 w-96 h-96 bg-pink-500/20 rounded-full blur-3xl animate-pulse-slow"></div>
+
+  <!-- Page Heading -->
   <h1 class="text-4xl md:text-6xl font-extrabold text-center mb-6
-  bg-gradient-to-r from-white via-indigo-300 to-pink-400
-  bg-clip-text text-transparent animate-fadeIn">
+    bg-gradient-to-r from-white via-indigo-300 to-pink-400
+    bg-clip-text text-transparent scroll-fade">
     Social Media Marketing
   </h1>
 
-  <p class="text-center text-gray-400 mb-16 animate-fadeIn">
+  <p class="text-center text-gray-400 mb-16 scroll-fade">
     Accounts Used: Facebook, Instagram | Tool: Canva
   </p>
 
   <!-- Business Info -->
-  <div class="bg-gray-900 rounded-2xl p-6 mb-12 card">
+  <div class="bg-gray-900 rounded-2xl p-6 mb-12 card scroll-fade">
     <h2 class="text-3xl font-bold text-pink-400 mb-4">Business Name</h2>
     <p class="text-gray-300 font-semibold">Elymee – Online Fashion Store (Dresses & Bags)</p>
   </div>
 
   <!-- Post Details -->
   <div class="space-y-8 mb-16">
-    <h2 class="text-3xl font-bold text-pink-400 text-center">Post Details</h2>
+    <h2 class="text-3xl font-bold text-pink-400 text-center scroll-fade">Post Details</h2>
 
-<section class="relative bg-gray-900 py-20 px-6 rounded-3xl card overflow-hidden">
+    <section class="relative bg-gray-900 py-20 px-6 rounded-3xl card overflow-hidden scroll-fade">
 
-  <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+      <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
 
-    <!-- LEFT IMAGE + COLOR DOTS -->
-    <div class="relative flex justify-center">
+        <!-- LEFT IMAGE + COLOR DOTS -->
+        <div class="relative flex justify-center scroll-fade">
 
-      <!-- 3 COLOR DOTS (BAG VARIANTS) -->
-      <div class="absolute left-[59px] top-1/2 -translate-y-1/2 flex flex-col gap-3">
-        <span class="w-5 h-5 bg-red-400 rounded-full shadow-md"></span>
-        <span class="w-6 h-6 bg-pink-400 rounded-full shadow-md"></span>
-        <span class="w-7 h-7 bg-indigo-600 rounded-full shadow-md"></span>
-      </div>
+          <!-- 3 COLOR DOTS -->
+          <div class="absolute left-[59px] top-1/2 -translate-y-1/2 flex flex-col gap-3">
+            <span class="w-5 h-5 bg-red-400 rounded-full shadow-md"></span>
+            <span class="w-6 h-6 bg-pink-400 rounded-full shadow-md"></span>
+            <span class="w-7 h-7 bg-indigo-600 rounded-full shadow-md"></span>
+          </div>
 
-      <!-- IMAGE WRAPPER -->
-      <div class="relative bg-gradient-to-br from-pink-500/30 to-indigo-500/30 rounded-[40px] p-4 shadow-lg">
-        <img
-          src="./Images/62411c0c-0f61-4305-b714-631265094fc5.jpg"
-          alt="Feminine Model"
-          class="rounded-[30px] w-[320px] object-cover"
-        >
-      </div>
-    </div>
-
-    <!-- RIGHT CONTENT -->
-    <div>
-      <h2 class="text-4xl font-serif text-pink-400 mb-4">
-      Black Moon Bag
-      </h2>
-
-      <p class="text-gray-300 leading-relaxed mb-8">
-        Discover elegance, confidence, and timeless beauty.  
-        Explore our premium bags available in multiple colors
-        to match every mood and style.
-      </p>
-<div class="max-w-6xl mx-auto mb-10 text-gray-400 flex flex-wrap gap-2 text-sm">
-  <span>#Blackmoon</span>
-  <span>#PremiumStyle</span>
-  <span>#FashionTrends</span>
-  <span>#stylishbag</span>
-  <span>#StreetStyle</span>
-
-</div>
-      <!-- STATS / INFO BOXES -->
-    <div class="flex gap-4 flex-wrap">
-
-  <!-- OLD PRICE -->
-  <div class="bg-gray-800 border border-gray-700 rounded-2xl px-6 py-4 text-center">
-    <h3 class="text-2xl font-semibold text-gray-400 line-through">Rs 3,000</h3>
-    <p class="text-sm text-gray-400">Original Price</p>
-  </div>
-
-  <!-- NEW PRICE -->
-  <div class="bg-gradient-to-r from-pink-500 to-pink-400 text-white rounded-2xl px-6 py-4 text-center shadow-lg">
-    <h3 class="text-2xl font-semibold">Rs 1,700</h3>
-    <p class="text-sm opacity-90">Now Price</p>
-  </div>
-
-  <!-- DISCOUNT -->
-  <div class="bg-gray-800 border border-gray-700 rounded-2xl px-6 py-4 text-center">
-    <h3 class="text-2xl font-semibold text-purple-400">25% OFF</h3>
-    <p class="text-sm text-gray-400">Limited Discount</p>
-  </div>
-
-</div>
-
-    </div>
-
-  </div>
-</section>
-
-
-<section class="relative bg-gray-900 py-20 px-6 rounded-3xl card overflow-hidden mt-20">
-
-  <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
-
-    <!-- LEFT: IMAGE COLLAGE -->
-    <div class="relative flex justify-center items-center">
-
-      <!-- ROTATING CIRCLE -->
-<!-- ROTATING CIRCLE -->
-<div class="absolute w-[380px] h-[380px] rounded-full border border-pink-500/30 animate-spin-slow"></div>
-
-      <!-- BIG IMAGE (CENTER) -->
-      <div class="relative z-10">
-        <img
-          src="./Images/frst.webp"
-          alt="Main Jacket"
-          class="w-[220px] h-[300px] object-cover rounded-3xl shadow-2xl"
-        >
-      </div>
-
-      <!-- SMALL IMAGE TOP -->
-      <img
-        src="./Images/secnd.jpg"
-        alt="Jacket Style 1"
-        class="absolute -top-6 left-10 w-[120px] h-[160px] object-cover rounded-2xl shadow-xl"
-      >
-
-      <!-- SMALL IMAGE BOTTOM -->
-      <img
-        src="./Images/61wg7gTtZUL._AC_UY1000_.jpg"
-        alt="Jacket Style 2"
-        class="absolute -bottom-6 right-10 w-[120px] h-[160px] object-cover rounded-2xl shadow-xl"
-      >
-    </div>
-
-    <!-- RIGHT CONTENT -->
-    <div>
-      <h2 class="text-4xl font-serif text-pink-400 mb-4">
-        Premium Winter Jackets
-      </h2>
-
-      <p class="text-gray-300 leading-relaxed mb-8">
-        Stay warm without compromising on style.  
-        Our premium jackets are designed for comfort,
-        durability, and a bold fashion statement.
-      </p>
-<!-- RELATED HASHTAGS -->
-<div class="max-w-6xl mx-auto mb-10 text-gray-400 flex flex-wrap gap-2 text-sm">
-  <span>#WinterJackets</span>
-  <span>#PremiumStyle</span>
-  <span>#FashionTrends</span>
-  <span>#StayWarm</span>
-  <span>#StreetStyle</span>
-
-</div>
-
-      <!-- PRICE BOXES -->
-      <div class="flex gap-4 flex-wrap">
-
-        <div class="bg-gray-800 border border-gray-700 rounded-2xl px-6 py-4 text-center">
-          <h3 class="text-2xl font-semibold text-gray-400 line-through">
-            Rs 6,500
-          </h3>
-          <p class="text-sm text-gray-400">Original Price</p>
+          <!-- IMAGE WRAPPER -->
+          <div class="relative bg-gradient-to-br from-pink-500/30 to-indigo-500/30 rounded-[40px] p-4 shadow-lg">
+            <img src="./Images/62411c0c-0f61-4305-b714-631265094fc5.jpg" 
+                 alt="Feminine Model" class="rounded-[30px] w-[320px] object-cover scroll-fade">
+          </div>
         </div>
 
-        <div class="bg-gradient-to-r from-pink-500 to-pink-400 text-white rounded-2xl px-6 py-4 text-center shadow-lg">
-          <h3 class="text-2xl font-semibold">Rs 4,800</h3>
-          <p class="text-sm opacity-90">Now Price</p>
-        </div>
+        <!-- RIGHT CONTENT -->
+        <div class="scroll-fade">
+          <h2 class="text-4xl font-serif text-pink-400 mb-4">Black Moon Bag</h2>
+          <p class="text-gray-300 leading-relaxed mb-8">
+            Discover elegance, confidence, and timeless beauty.  
+            Explore our premium bags available in multiple colors
+            to match every mood and style.
+          </p>
 
-        <div class="bg-gray-800 border border-gray-700 rounded-2xl px-6 py-4 text-center">
-          <h3 class="text-2xl font-semibold text-purple-400">26% OFF</h3>
-          <p class="text-sm text-gray-400">Limited Offer</p>
-        </div>
+          <!-- Hashtags -->
+          <div class="max-w-6xl mx-auto mb-10 text-gray-400 flex flex-wrap gap-2 text-sm scroll-fade">
+            <span>#Blackmoon</span>
+            <span>#PremiumStyle</span>
+            <span>#FashionTrends</span>
+            <span>#stylishbag</span>
+            <span>#StreetStyle</span>
+          </div>
 
+          <!-- STATS / INFO BOXES -->
+          <div class="flex gap-4 flex-wrap scroll-fade">
+            <div class="bg-gray-800 border border-gray-700 rounded-2xl px-6 py-4 text-center">
+              <h3 class="text-2xl font-semibold text-gray-400 line-through">Rs 3,000</h3>
+              <p class="text-sm text-gray-400">Original Price</p>
+            </div>
+            <div class="bg-gradient-to-r from-pink-500 to-pink-400 text-white rounded-2xl px-6 py-4 text-center shadow-lg">
+              <h3 class="text-2xl font-semibold">Rs 1,700</h3>
+              <p class="text-sm opacity-90">Now Price</p>
+            </div>
+            <div class="bg-gray-800 border border-gray-700 rounded-2xl px-6 py-4 text-center">
+              <h3 class="text-2xl font-semibold text-purple-400">25% OFF</h3>
+              <p class="text-sm text-gray-400">Limited Discount</p>
+            </div>
+          </div>
+        </div>
       </div>
+    </section>
+
+    <!-- Image Collage Section -->
+    <section class="relative bg-gray-900 py-20 px-6 rounded-3xl card overflow-hidden scroll-fade mt-20">
+      <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+
+        <!-- LEFT: IMAGE COLLAGE -->
+        <div class="relative flex justify-center items-center scroll-fade">
+          <div class="absolute w-[380px] h-[380px] rounded-full border border-pink-500/30 animate-spin-slow"></div>
+          <div class="relative z-10">
+            <img src="./Images/frst.webp" alt="Main Jacket" class="w-[220px] h-[300px] object-cover rounded-3xl shadow-2xl scroll-fade">
+          </div>
+          <img src="./Images/secnd.jpg" alt="Jacket Style 1" class="absolute -top-6 left-10 w-[120px] h-[160px] object-cover rounded-2xl shadow-xl scroll-fade">
+          <img src="./Images/61wg7gTtZUL._AC_UY1000_.jpg" alt="Jacket Style 2" class="absolute -bottom-6 right-10 w-[120px] h-[160px] object-cover rounded-2xl shadow-xl scroll-fade">
+        </div>
+
+        <!-- RIGHT CONTENT -->
+        <div class="scroll-fade">
+          <h2 class="text-4xl font-serif text-pink-400 mb-4">Premium Winter Jackets</h2>
+          <p class="text-gray-300 leading-relaxed mb-8">
+            Stay warm without compromising on style.  
+            Our premium jackets are designed for comfort,
+            durability, and a bold fashion statement.
+          </p>
+
+          <div class="max-w-6xl mx-auto mb-10 text-gray-400 flex flex-wrap gap-2 text-sm scroll-fade">
+            <span>#WinterJackets</span>
+            <span>#PremiumStyle</span>
+            <span>#FashionTrends</span>
+            <span>#StayWarm</span>
+            <span>#StreetStyle</span>
+          </div>
+
+          <!-- PRICE BOXES -->
+          <div class="flex gap-4 flex-wrap scroll-fade">
+            <div class="bg-gray-800 border border-gray-700 rounded-2xl px-6 py-4 text-center">
+              <h3 class="text-2xl font-semibold text-gray-400 line-through">Rs 6,500</h3>
+              <p class="text-sm text-gray-400">Original Price</p>
+            </div>
+            <div class="bg-gradient-to-r from-pink-500 to-pink-400 text-white rounded-2xl px-6 py-4 text-center shadow-lg">
+              <h3 class="text-2xl font-semibold">Rs 4,800</h3>
+              <p class="text-sm opacity-90">Now Price</p>
+            </div>
+            <div class="bg-gray-800 border border-gray-700 rounded-2xl px-6 py-4 text-center">
+              <h3 class="text-2xl font-semibold text-purple-400">26% OFF</h3>
+              <p class="text-sm text-gray-400">Limited Offer</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Canva Post Section -->
+    <section class="relative bg-gradient-to-b from-purple-900 via-pink-900 to-purple-900 py-24 px-6 rounded-3xl overflow-hidden scroll-fade">
+      <div class="max-w-3xl mx-auto flex flex-col items-center text-center">
+
+        <div class="relative w-[320px] h-[320px] mb-8">
+          <div class="absolute w-full h-full rounded-full border-4 border-pink-400/40 animate-spin-slow"></div>
+
+          <img src="./Images/Green Modern Style Handbag Instagram Post.png" alt="Post1" class="absolute -top-6 left-1/4 w-[140px] h-[180px] object-cover rounded-2xl shadow-2xl border-2 border-white scroll-fade">
+          <img src="./Images/Yellow Aesthetic Products Bags Instagram Post.png" alt="Post2" class="absolute -bottom-6 right-1/4 w-[140px] h-[180px] object-cover rounded-2xl shadow-2xl border-2 border-white scroll-fade">
+        </div>
+
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4 scroll-fade">Canva POST</h2>
+        <p class="text-gray-200 mb-6 leading-relaxed scroll-fade">
+          This Instagram post is <span class="text-pink-300 font-semibold">designed and edited using Canva</span>.  
+          It shows a creative circular layout, perfect for presentation tasks or social media.
+        </p>
+
+        <p class="inline-block bg-pink-500 hover:bg-indigo-500 text-white font-semibold px-6 py-3 rounded-full shadow-lg transition-all scroll-fade">
+          View Design
+        </p>
+
+        <div class="flex gap-2 mt-4">
+          <a href="./Images/Yellow Aesthetic Products Bags Instagram Post.png" class="inline-block bg-pink-500 hover:bg-pink-600 text-white font-semibold px-6 py-3 rounded-full shadow-lg scroll-fade">1</a>
+          <a href="./Images/Green Modern Style Handbag Instagram Post.png" class="inline-block bg-pink-500 hover:bg-pink-600 text-white font-semibold px-6 py-3 rounded-full shadow-lg scroll-fade">2</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Navigation Buttons -->
+    <div class="flex justify-center gap-6 mt-16 flex-wrap scroll-fade">
+      <a href="task1.html" class="px-8 py-3 rounded-full bg-gradient-to-r from-indigo-600 to-pink-500 font-semibold">← Back to Task 1</a>
+      <a href="task3.html" class="px-8 py-3 rounded-full bg-gradient-to-r from-indigo-600 to-pink-500 font-semibold">Continue →</a>
     </div>
 
-  </div>
 </section>
 
-
-<section class="relative bg-gradient-to-b from-purple-900 via-pink-900 to-purple-900 py-24 px-6 rounded-3xl overflow-hidden">
-
-  <div class="max-w-3xl mx-auto flex flex-col items-center text-center">
-
-    <!-- ROTATING CIRCLE FOR DESIGN -->
-    <div class="relative w-[320px] h-[320px] mb-8">
-      <div class="absolute w-full h-full rounded-full border-4 border-pink-400/40 animate-spin-slow"></div>
-
-      <!-- IMAGE 1 -->
-      <img 
-        src="./Images/Green Modern Style Handbag Instagram Post.png" 
-        alt="Jacket Style 1"
-        class="absolute -top-6 left-1/4 w-[140px] h-[180px] object-cover rounded-2xl shadow-2xl border-2 border-white"
-      >
-
-      <!-- IMAGE 2 -->
-      <img 
-        src="./Images/Yellow Aesthetic Products Bags Instagram Post.png" 
-        alt="Jacket Style 2"
-        class="absolute -bottom-6 right-1/4 w-[140px] h-[180px] object-cover rounded-2xl shadow-2xl border-2 border-white"
-      >
-    </div>
-
-    <!-- CAPTION / TEXT -->
-    <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Canva POST</h2>
-    <p class="text-gray-200 mb-6 leading-relaxed">
-  This Instagram post is <span class="text-pink-300 font-semibold">designed and edited using Canva</span>.  
-  It shows a creative circular layout, perfect for presentation tasks or social media.  
-  Made with Canva for my project/task.
-</p>
-
-    <!-- CALL TO ACTION --> <p class="inline-block bg-pink-500 hover:bg-indigo-500 text-white font-semibold px-6 py-3 rounded-full shadow-lg transition-all">
-View Design
-    </p>
-    <div>
-        <a href="./Images//Yellow Aesthetic Products Bags Instagram Post.png" class="inline-block bg-pink-500 mt-2 hover:bg-pink-600 text-white font-semibold px-6 py-3 rounded-full shadow-lg transition-all">
-    1
-    </a>
-     <a href="./Images//Green Modern Style Handbag Instagram Post.png" class="inline-block bg-pink-500  mt-3 hover:bg-pink-600 text-white font-semibold px-6 py-3 rounded-full shadow-lg transition-all">
-    2
-    </a>
-    
-    </div>
-   
-    
-  </div>
-</section>
-
-<style>
-/* Slow rotating circle */
-@keyframes spin-slow {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
-.animate-spin-slow {
-  animation: spin-slow 40s linear infinite;
-}
-</style>
-
-  </div>
-
-  <!-- Lightbox for Post Image -->
-  <div id="postImage" class="lightbox" onclick="closeImg('postImage')">
-    <img src="./Images/black-moon-bag-post.png" alt="Black Moon Bag Post">
-  </div>
-
-  <!-- Navigation -->
-  <div class="flex justify-center gap-6 mt-16">
-    <a href="task1.html" class="px-8 py-3 rounded-full bg-gradient-to-r from-indigo-600 to-pink-500 font-semibold">← Back to Task 1</a>
-    <a href="task3.html" class="px-8 py-3 rounded-full bg-gradient-to-r from-indigo-600 to-pink-500 font-semibold">Continue →</a>
-  </div>
-</section>
+<!-- Lightbox -->
+<div id="postImage" class="lightbox" onclick="closeImg('postImage')">
+  <img src="./Images/black-moon-bag-post.png" alt="Black Moon Bag Post">
+</div>
 
 <script>
 function openImg(id){ document.getElementById(id).style.display='flex'; }
 function closeImg(id){ document.getElementById(id).style.display='none'; }
+
+/* Scroll-triggered animations */
+document.addEventListener("DOMContentLoaded", function() {
+  const scrollElements = document.querySelectorAll(".scroll-fade");
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        entry.target.classList.add("show");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.2 });
+  scrollElements.forEach(el => observer.observe(el));
+});
 </script>
 
 </body>
