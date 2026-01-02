@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Business Details</title>
+<script src="https://cdn.tailwindcss.com"></script>
+
+<style>
+@keyframes fadeUp {
+  0% { opacity: 0; transform: translateY(25px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes blobMove {
+  0%,100% { transform: translate(0,0) scale(1); }
+  50% { transform: translate(30px,-30px) scale(1.1); }
+}
+
+.animate-fadeUp { animation: fadeUp 1s ease forwards; }
+.animate-blob { animation: blobMove 14s ease-in-out infinite; }
+
+.glass-card{
+  background: linear-gradient(
+    135deg,
+    rgba(255,255,255,0.07),
+    rgba(255,255,255,0.02)
+  );
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255,255,255,0.1);
+  transition: all .4s ease;
+}
+
+.glass-card:hover{
+  transform: translateY(-6px);
+  box-shadow:
+    0 0 30px rgba(99,102,241,.3),
+    0 0 20px rgba(236,72,153,.25);
+}
+</style>
+</head>
+
+<body class="bg-gradient-to-br from-gray-950 via-black to-gray-900 text-gray-200 font-sans overflow-x-hidden">
+
+<section class="relative px-6 py-20 max-w-6xl mx-auto">
+
+  <!-- BLOBS -->
+  <div class="absolute -top-40  w-[26rem] h-[26rem] bg-indigo-500/20 rounded-full blur-3xl animate-blob"></div>
+  <div class="absolute -bottom-40 -40 w-[26rem] h-[26rem] bg-pink-500/20 rounded-full blur-3xl animate-blob"></div>
+
+  <!-- MAIN HEADING -->
+  <h1 class="text-3xl md:text-5xl font-extrabold text-center mb-4
+    bg-gradient-to-r from-white via-indigo-300 to-pink-400
+    bg-clip-text text-transparent animate-fadeUp">
+    Business Details
+  </h1>
+
+  <!-- BUSINESS 1 -->
+  <h2 class="text-2xl text-pink-400  md:text-3xl font-bold mb-10 text-center text-indigo-300 animate-fadeUp">
+    Elymee (Online Fashion Brand)
+  </h2>
+
+  <div class="grid md:grid-cols-2 gap-8 mb-24 text-sm md:text-[15px]">
+    <div class="glass-card rounded-2xl p-6 animate-fadeUp">
+      <h3 class="text-pink-400 text-lg font-semibold mb-3">Business Info</h3>
+      <p><b>Name:</b> Elymee</p>
+      <p><b>Type:</b> Online Fashion Store</p>
+      <p><b>Model:</b> Dropshipping</p>
+      <p><b>Target:</b> Pakistan</p>
+    </div>
+
+    <div class="glass-card rounded-2xl p-6 animate-fadeUp">
+      <h3 class="text-pink-400 text-lg font-semibold mb-3">Overview</h3>
+      <p>
+        Elymee is an online fashion brand selling women’s dresses and bags
+        across Pakistan without physical inventory.
+      </p>
+    </div>
+
+    <div class="glass-card rounded-2xl p-6 animate-fadeUp">
+      <h3 class="text-pink-400 text-lg font-semibold mb-3">Marketing Strategy</h3>
+      <p>
+        Promotion through Instagram and Facebook using visuals,
+        influencer content and engagement.
+      </p>
+    </div>
+
+    <div class="glass-card rounded-2xl p-6 animate-fadeUp">
+      <h3 class="text-pink-400 text-lg font-semibold mb-3">Business Goals</h3>
+      <p>
+        Increase brand trust, grow sales and establish Elymee
+        nationwide.
+      </p>
+    </div>
+  </div>
+
+  <!-- BUSINESS 2 -->
+  <h2 class="text-2xl md:text-3xl font-bold mb-10 text-center text-pink-400 animate-fadeUp">
+     E-Commerce Virtual Assistant Services
+  </h2>
+
+  <div class="grid md:grid-cols-2 gap-8 text-sm md:text-[15px]">
+    <div class="glass-card rounded-2xl p-6 animate-fadeUp">
+      <h3 class="text-pink-400 text-lg font-semibold mb-3">Service Overview</h3>
+      <p>
+        Managing multiple client e-commerce stores as a Virtual Assistant.
+      </p>
+    </div>
+
+    <div class="glass-card rounded-2xl p-6 animate-fadeUp">
+      <h3 class="text-pink-400 text-lg font-semibold mb-3">Platforms</h3>
+      <p>
+        Etsy, TikTok Shop, eBay and global marketplaces.
+      </p>
+    </div>
+
+    <div class="glass-card rounded-2xl p-6 animate-fadeUp">
+      <h3 class="text-pink-400 text-lg font-semibold mb-3">Branding</h3>
+      <p>
+        Client-based branding, logos and customised products.
+      </p>
+    </div>
+
+    <div class="glass-card rounded-2xl p-6 animate-fadeUp">
+      <h3 class="text-pink-400 text-lg font-semibold mb-3">Operations</h3>
+      <p>
+        Inventory sourcing, branding and fulfillment handled smoothly.
+      </p>
+    </div>
+  </div>
+
+  <!-- BUTTONS -->
+  <div class="flex justify-center gap-8 mt-24 flex-wrap animate-fadeUp">
+
+    <!-- BACK -->
+    <a href="index.html"
+       class="group relative overflow-hidden px-9 py-3 rounded-full
+       bg-gradient-to-r from-cyan-500 to-blue-600
+       text-sm md:text-base font-semibold tracking-wide
+       transition-all duration-500 ease-out
+       hover:-translate-x-2 hover:shadow-[0_0_25px_rgba(34,211,238,.5)]">
+
+      <span class="relative z-10 transition-transform duration-500 group-hover:-translate-x-2">
+        ← Back
+      </span>
+
+      <span class="absolute inset-0 bg-gradient-to-r from-blue-600 to-cyan-500
+        translate-x-full group-hover:translate-x-0 transition-transform duration-500">
+      </span>
+    </a>
+
+    <!-- CONTINUE -->
+    <a href="task1.html"
+       class="group relative overflow-hidden px-9 py-3 rounded-full
+       bg-gradient-to-r from-fuchsia-500 to-purple-600
+       text-sm md:text-base font-semibold tracking-wide
+       transition-all duration-500 ease-out
+       hover:translate-x-2 hover:shadow-[0_0_25px_rgba(217,70,239,.5)]">
+
+      <span class="relative z-10 transition-transform duration-500 group-hover:translate-x-2">
+        Continue →
+      </span>
+
+      <span class="absolute inset-0 bg-gradient-to-r from-purple-600 to-fuchsia-500
+        -translate-x-full group-hover:translate-x-0 transition-transform duration-500">
+      </span>
+    </a>
+
+  </div>
+
+</section>
+</body>
+</html>
