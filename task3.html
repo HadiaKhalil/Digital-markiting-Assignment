@@ -27,7 +27,7 @@
     }
   </style>
 </head>
-<body class="bg-gray-950 text-white font-sans overflow-x-hidden relative">
+<body class="bg-gray-950 text-white font-sans overflow-x-hidden relative mx-auto">
 
   <!-- Background blobs -->
   <div class="absolute w-96 h-96 bg-indigo-600/20 rounded-full blur-3xl animate-pulse-slow"></div>
@@ -36,79 +36,89 @@
   <main class="py-16 px-6">
 
     <!-- Nova Mart Welcome Section -->
-    <section class="relative py-24 px-6 rounded-3xl overflow-hidden">
+ <section class="relative py-16 md:py-24 px-4 md:px-6 rounded-3xl overflow-hidden">
 
-      <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+  <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
 
-        <!-- LEFT: CIRCULAR IMAGE -->
-        <div class="flex flex-col items-center md:items-start relative group space-y-6 scroll-fade">
+    <!-- LEFT: CIRCULAR IMAGE -->
+    <div class="flex flex-col items-center md:items-start relative group space-y-6 scroll-fade">
 
-          <!-- Decorative glowing circles -->
-          <div class="absolute -top-12 -left-12 w-[500px] h-[500px] rounded-full bg-gradient-to-br from-pink-400 to-purple-600 opacity-20 blur-3xl z-0"></div>
-          <div class="absolute -bottom-12 -right-12 w-[400px] h-[400px] rounded-full bg-gradient-to-tr from-indigo-400 to-pink-500 opacity-20 blur-3xl z-0"></div>
+      <!-- Decorative glowing circles -->
+      <div class="absolute -top-20 -left-20 w-[300px] h-[300px] md:w-[500px] md:h-[500px] rounded-full bg-gradient-to-br from-pink-400 to-purple-600 opacity-20 blur-3xl z-0"></div>
+      <div class="absolute -bottom-20 -right-20 w-[250px] h-[250px] md:w-[400px] md:h-[400px] rounded-full bg-gradient-to-tr from-indigo-400 to-pink-500 opacity-20 blur-3xl z-0"></div>
 
-          <!-- IMAGE CIRCLE -->
-          <div class="relative w-[500px] h-[500px] rounded-full overflow-hidden shadow-2xl border-4 border-white/20 transform transition-all duration-500 group-hover:scale-105 group-hover:rotate-3 z-10">
-            <img
-              src="./Images/WhatsApp Image 2026-01-02 at 2.36.18 PM.jpeg"
-              alt="Nova Mart Welcome"
-              class="w-full h-full object-cover scroll-fade"
-            >
-            <!-- Overlay on hover -->
-            <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-30 transition-opacity rounded-full"></div>
-          </div>
+      <!-- IMAGE CIRCLE -->
+      <div class="relative 
+        w-[260px] h-[260px] 
+        sm:w-[320px] sm:h-[320px] 
+        md:w-[420px] md:h-[420px] 
+        lg:w-[500px] lg:h-[500px]
+        rounded-full overflow-hidden shadow-2xl border-4 border-white/20 
+        transform transition-all duration-500 
+        group-hover:scale-105 group-hover:rotate-3 z-10">
 
-          <!-- Button -->
-          <a href="./Images/WhatsApp Image 2026-01-02 at 2.36.18 PM.jpeg"
-             class="inline-block bg-pink-500 hover:bg-pink-600 text-white font-semibold px-6 py-3 rounded-full shadow-lg transition-all scroll-fade">
-            View Image
-          </a>
+        <img
+          src="./Images/WhatsApp Image 2026-01-02 at 2.36.18 PM.jpeg"
+          alt="Nova Mart Welcome"
+          class="w-full h-full object-cover scroll-fade"
+        >
 
-        </div>
-
-        <!-- RIGHT: CONTENT -->
-        <div class="space-y-6 scroll-fade">
-
-          <h2 class="text-4xl font-bold text-white scroll-fade">
-            Welcome to Nova Mart! Unlock 60% Off Your First Order
-          </h2>
-
-          <p class="text-lg leading-relaxed text-white/90 scroll-fade">
-            We’re thrilled to have you! Enjoy <span class="font-semibold text-pink-400">20% off your first purchase</span> at Nova Mart. Discover amazing products and exclusive deals tailored just for you.
-          </p>
-
-          <p class="text-white/80 scroll-fade">
-            Don’t wait—your perfect find is just a click away!
-          </p>
-
-          <!-- Offer Box -->
-          <div class="bg-white/10 p-6 rounded-2xl space-y-2 text-gray-100 border border-white/20 scroll-fade">
-            <p class="font-semibold">Offer Details:</p>
-            <ul class="list-disc list-inside space-y-1">
-              <li>60% off your first order</li>
-              <li>Use code: <span class="font-semibold text-pink-400">WELCOME60</span></li>
-              <li>Valid for 7 days</li>
-            </ul>
-          </div>
-
-          <!-- CTA Button -->
-          <a href="https://hadiyakhalil221.wixsite.com/elymee"
-             target="_blank"
-             class="inline-block bg-white text-pink-500 font-semibold px-8 py-4 rounded-full shadow-lg hover:bg-white/90 transition-all scroll-fade">
-            Shop Now & Save 60%
-          </a>
-
-        </div>
-
+        <!-- Overlay -->
+        <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-30 transition-opacity rounded-full"></div>
       </div>
 
-      <!-- Navigation Buttons -->
-      <div class="flex justify-center gap-6 mt-16 scroll-fade">
-        <a href="task2.html" class="px-8 py-3 rounded-full bg-gradient-to-r from-indigo-600 to-pink-500 font-semibold">← Back to Task 2</a>
-        <a href="task4.html" class="px-8 py-3 rounded-full bg-gradient-to-r from-indigo-600 to-pink-500 font-semibold">Continue →</a>
+      <!-- Button -->
+      <a href="./Images/WhatsApp Image 2026-01-02 at 2.36.18 PM.jpeg"
+         class="inline-block bg-pink-500 hover:bg-pink-600 text-white font-semibold px-6 py-3 rounded-full shadow-lg transition-all scroll-fade">
+        View Image
+      </a>
+
+    </div>
+
+    <!-- RIGHT: CONTENT -->
+    <div class="space-y-6 text-center md:text-left scroll-fade">
+
+      <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-white scroll-fade">
+        Welcome to Nova Mart! Unlock 60% Off Your First Order
+      </h2>
+
+      <p class="text-base sm:text-lg leading-relaxed text-white/90 scroll-fade">
+        We’re thrilled to have you! Enjoy <span class="font-semibold text-pink-400">20% off your first purchase</span> at Nova Mart. Discover amazing products and exclusive deals tailored just for you.
+      </p>
+
+      <p class="text-white/80 scroll-fade">
+        Don’t wait—your perfect find is just a click away!
+      </p>
+
+      <!-- Offer Box -->
+      <div class="bg-white/10 p-5 md:p-6 rounded-2xl space-y-2 text-gray-100 border border-white/20 scroll-fade">
+        <p class="font-semibold">Offer Details:</p>
+        <ul class="list-disc list-inside space-y-1">
+          <li>60% off your first order</li>
+          <li>Use code: <span class="font-semibold text-pink-400">WELCOME60</span></li>
+          <li>Valid for 7 days</li>
+        </ul>
       </div>
 
-    </section>
+      <!-- CTA Button -->
+      <a href="https://hadiyakhalil221.wixsite.com/elymee"
+         target="_blank"
+         class="inline-block bg-white text-pink-500 font-semibold px-7 py-4 rounded-full shadow-lg hover:bg-white/90 transition-all scroll-fade">
+        Shop Now & Save 60%
+      </a>
+
+    </div>
+
+  </div>
+
+  <!-- Navigation Buttons -->
+  <div class="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6 mt-14 scroll-fade">
+    <a href="task2.html" class="px-8 py-3 rounded-full bg-gradient-to-r from-indigo-600 to-pink-500 font-semibold text-center">← Back to Task 2</a>
+    <a href="task4.html" class="px-8 py-3 rounded-full bg-gradient-to-r from-indigo-600 to-pink-500 font-semibold text-center">Continue →</a>
+  </div>
+
+</section>
+
 
   </main>
 
